@@ -1,0 +1,42 @@
+function setup(){
+    createCanvas(500,500);
+    background(171, 0, 171);
+    fill(115, 128, 255);
+    ellipse(100,100,75,75);
+    ellipse(200,100,75,75);
+    ellipse(300,100,75,75);
+    ellipse(400,100,75,75);
+    ellipse(100,200,75,75);
+    ellipse(200,200,75,75);
+    ellipse(300,200,75,75);
+    ellipse(400,200,75,75);
+    ellipse(100,300,75,75);
+    ellipse(200,300,75,75);
+    ellipse(300,300,75,75);
+    ellipse(400,300,75,75);
+    ellipse(100,400,75,75);
+    ellipse(200,400,75,75);
+    ellipse(300,400,75,75);
+    ellipse(400,400,75,75);
+
+    fill(115, 227, 255);
+    ellipse(100,100,45,45);
+    ellipse(200,100,45,45);
+    ellipse(300,100,45,45);
+    ellipse(400,100,45,45);
+    ellipse(100,200,45,45);
+    ellipse(200,200,45,45);
+    ellipse(300,200,45,45);
+    ellipse(400,200,45,45);
+    ellipse(100,300,45,45);
+    ellipse(200,300,45,45);
+    ellipse(300,300,45,45);
+    ellipse(400,300,45,45);
+    ellipse(100,400,45,45);
+    ellipse(200,400,45,45);
+    ellipse(300,400,45,45);
+    ellipse(400,400,45,45);
+    fill(0);
+    textSize(20);
+    text("Ég vil hamborgara",175,40);
+}
