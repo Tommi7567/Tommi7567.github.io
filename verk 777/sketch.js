@@ -1,26 +1,43 @@
-var bukur = 100;
+var x = 100;
+var y = 100;
+var hradiX = 5;
+var hradiY = 11;
+var boltiStaerd = 20;
+var stig = 0;
+var spadiBreidd = 150;
+var spadiThykkt = 25;
+var spadiY;
 
 function setup() {
-  createCanvas(350,550);
-  rectMode(CENTER);
-}
-function draw() {
-  background(255,200,0);
-  // Teiknum búkinn
-  fill(236,36,94);
-  rect(mouseX,mouseY,40,bukur);
-  // Teiknum hausinn
-  fill(255);
-  ellipse(mouseX,mouseY - bukur/2, 80,80);
-  // Teiknum augun
-  fill(100);
-  ellipse (mouseX - 25,mouseY - bukur/2, 20,40);
-  ellipse (mouseX + 25,mouseY - bukur/2, 20,40);
-  // Teiknum fæturna
-  line (mouseX - 20, mouseY + bukur/2, mouseX - 20, mouseY + bukur/2 + 50);
-  line (mouseX + 20, mouseY + bukur/2, mouseX + 20, mouseY + bukur/2 + 50);
+	createCanvas(600,500);
+	spadiY = height - 45;
+	rectMode(CENTER);
+	textFont("Courier New",16);
+	textStyle(BOLD);
 }
 
-function mousePressed() {
-	bukur = random (50,150);
+function draw() {
+  background(255,200,0);
+	// Reikna ný hnit út frá hraða boltans:
+  x = x + hradiX;
+  y = y + hradiY;
+	// Athuga hvort boltinn snertir veggi:
+  if ((x > width-boltiStaerd/2) || (x < boltiStaerd/2))  {
+    hradiX = hradiX * -1;
+  }
+  if ((y > height-boltiStaerd/2) || (y < boltiStaerd)) {
+    hradiY = hradiY * -1;
+  }
+	// Athuga hvort bolti snertir spaða:
+	// abs() táknar algildi/tölugildi
+	if(abs(spadiY - y) < boltiStaerd/2 + spadiThykkt/2 && abs(mouseX - x) < boltiStaerd/2 + spadiBreidd/2){
+    hradiY = hradiY * -1;
+		stig = stig + 1;
+	}
+	// Teikna boltann, spaðann og stigin
+  fill(236,36,94);
+  rect(x, y, boltiStaerd, boltiStaerd);
+	rect(mouseX,spadiY ,spadiBreidd,spadiThykkt);
+	fill(0);
+	text("Stig: " + stig,20,20);
 }
